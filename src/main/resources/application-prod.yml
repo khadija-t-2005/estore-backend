@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/estore_prod}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate  # Validation seulement, pas de modification
+    show-sql: false
+
+  data:
+    mongodb:
+      uri: ${MONGO_URI:mongodb://localhost:27017/estore_prod}
+
+logging:
+  level:
+    root: WARN
+    com.estore: INFO

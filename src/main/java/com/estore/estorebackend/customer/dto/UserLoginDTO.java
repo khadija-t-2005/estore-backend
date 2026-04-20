@@ -1,0 +1,10 @@
+package com.estore.estorebackend.customer.dto;
+
+import lombok.*;
+
+@Getter @Setter
+@NoArgsConstructor @AllArgsConstructor
+public class UserLoginDTO {
+    private String email;
+    private String password;
+}
