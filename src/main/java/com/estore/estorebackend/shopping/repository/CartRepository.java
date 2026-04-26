@@ -1,4 +1,12 @@
-package com.estore.estorebackend.shopping.repository;
+package com.estore.estoreProject.shopping.repository;
 
-public interface CartRepository {
+import com.estore.estoreProject.shopping.entity.Cart;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface CartRepository extends JpaRepository<Cart, Long> {
+    List<Cart> findByUserId(Long userId);
+    Optional<Cart> findTopByUserIdOrderByCreatedAtDesc(Long userId);
 }
